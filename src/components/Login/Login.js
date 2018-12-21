@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './Login.css';
-import axios from 'axios';
 
 class Login extends Component {
   constructor(props) {
@@ -21,17 +20,6 @@ class Login extends Component {
 
   handleSubmit(e) {
     this.props.changePlayerName(this.state.playerName);
-
-    axios.post('/battleship/playerName', {
-      player: this.state.playerName
-    })
-    .then((response) => {
-      console.log(response);
-    })
-    .catch((error) => {
-      console.log(error);
-    })
-
     this.setState({
       playerName: ''
     })

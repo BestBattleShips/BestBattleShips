@@ -8,5 +8,8 @@ router
 router
   .route('/playerName')
   .post(controller.changePlayerName);
+router
+  .route('/getPlayerNumber')
+  .post(controller.getOpponentName);
 
 module.exports = router;

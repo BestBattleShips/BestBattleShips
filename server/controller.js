@@ -13,17 +13,30 @@ const controller = {
   },
 
   changePlayerName: (req, res) => {
-    console.log(req.body);
-    if (!playerOneBoard) {
+    console.log('this is player name: ', req.body);
+    if (!playerOneBoard) {  
       playerOneBoard = player(req.body.player)
-      res.send('you\'re playerone!')
+      res.status(200).send('1')
     } else if (!playerTwoBoard) {
       playerTwoBoard = player(req.body.player)
-      res.send(`you're player two, nigga`)
+      res.status(200).send('2')
     } else {
       res.send('fuck off')
     }
-//  resconst playerName 
+  },
+
+  getOpponentName: (req, res) => {
+    if (req.body.playerNum === 1) {
+      if(playerTwoBoard) {
+        console.log('this is playerTwoBoard.player: ', playerTwoBoard.player)
+        res.status(200).send(playerTwoBoard.player)
+      } else {
+        res.status(200).send('Waiting on Opponent');
+      }
+    } else if (req.body.playerNum === 2) {
+      console.log('this is playerOneBoard.player: ', playerOneBoard.player)
+      res.status(200).send(playerOneBoard.player);
+    }
   }
 }
 
