@@ -4,6 +4,9 @@ const controller = require('./controller')
 
 router
   .route('/attack')
-  .get(controller.testGet)
+  .get(controller.testGet);
+router
+  .route('/playerName')
+  .post(controller.changePlayerName);
 
 module.exports = router;
