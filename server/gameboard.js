@@ -20,3 +20,5 @@ const player1 = new Board(1,8,8);
 
 const player2 = new Board(2,8,8);
 
+module.exports.player1 = player1;
+module.exports.player2 = player2;
