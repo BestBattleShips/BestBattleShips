@@ -37,6 +37,21 @@ const controller = {
       console.log('this is playerOneBoard.player: ', playerOneBoard.player)
       res.status(200).send(playerOneBoard.player);
     }
+  },
+
+  placeShips: (req, res) => {
+    console.log(req.body);
+    if (req.body.playerNumber === 1) {
+      req.body.shipLocations.forEach((tuple) => {
+        playerOneBoard.placePieces(tuple[0], tuple[1])
+      })
+      res.status(200).send(playerOneBoard.board)
+    } else if (req.body.playerNumber === 2) {
+      req.body.shipLocations.forEach((tuple) => {
+        playerTwoBoard.placePieces(tuple[0], tuple[1])
+      })
+      res.status(200).send(playerTwoBoard.board)
+    }
   }
 }
 

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Login from '../Login/Login.js'
 import Opponent from '../OpponentName/OpponentName.js'
+import GameBoard from '../GameBoard/GameBoard.js'
 import axios from 'axios'
 
 class App extends Component {
@@ -45,6 +46,7 @@ class App extends Component {
       <div>
         <div>You are player number {this.state.playerNumber}</div>
         <Opponent number={this.state.playerNumber}/>
+        <GameBoard number = {this.state.playerNumber}/>
       </div>
     );
   }

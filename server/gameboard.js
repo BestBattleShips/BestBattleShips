@@ -14,6 +14,11 @@ class Board{
     return 'hello';
   }
 
+  destroyPiece(row, col) {
+    this.board[row][col] = 2;
+    return 'Hit!'
+  }
+
 }
 
 const player = (name) => {

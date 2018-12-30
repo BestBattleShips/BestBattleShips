@@ -1,0 +1,22 @@
+.tile {
+  position: relative;
+}
+
+.row {
+  display: flex;
+  width: 50vw;
+}
+
+
+
+
+/*
+#skillsWrapper {
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  width: 1100px;
+  justify-content: space-between;
+  padding: 50px;
+}
+*/

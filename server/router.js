@@ -11,5 +11,8 @@ router
 router
   .route('/getPlayerNumber')
   .post(controller.getOpponentName);
+  router
+  .route('/assignPieces')
+  .post(controller.placeShips);
 
 module.exports = router;
